@@ -14,6 +14,12 @@ function Ticket(props){
     </div>
   );
 }
-Ticket.propTypes = {};
+// Notice the first letter in the propTypes following Ticket is lowercase (Ticket.propTypes), whereas the PropTypes in the lines defining each component property is uppercase (PropTypes.string).
+// We fill this object literal with a list of props the component accepts, and the data type each should be:
+Ticket.propTypes = {
+  names: PropTypes.string,
+  location: PropTypes.string,
+  issue: PropTypes.string
+};
 
 export default Ticket;
