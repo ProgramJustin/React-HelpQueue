@@ -6,10 +6,6 @@ function App(){
   return (
     <div>
       <Header/>
-      <h3>3a</h3>
-      <h3>Justin, Mew, and Nigel</h3>
-      <p><em>Firebase entries not saving!</em></p>
-      <hr/>
     </div>
   );
 }
