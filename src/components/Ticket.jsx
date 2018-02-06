@@ -17,8 +17,8 @@ function Ticket(props){
 // Notice the first letter in the propTypes following Ticket is lowercase (Ticket.propTypes), whereas the PropTypes in the lines defining each component property is uppercase (PropTypes.string).
 // We fill this object literal with a list of props the component accepts, and the data type each should be:
 Ticket.propTypes = {
-  names: PropTypes.string,
-  location: PropTypes.string,
+  names: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
   issue: PropTypes.string
 };
 
