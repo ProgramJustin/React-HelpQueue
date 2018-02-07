@@ -8,7 +8,7 @@ function Ticket(props){
 // Also, don't forget JSX JavaScript expressions must be wrapped in curly braces. This indicates content should be evaluated instead of literally rendered. We call the props object and access its location, name and issue values, which requires evaluation. (Without curly braces, our DOM would literally read "props.location" instead of "3A").
   return (
     <div className="color-toggle">
-    <style jsx global>{`
+      <style jsx global>{`
         .color-toggle {
           background-color: white;
         }
