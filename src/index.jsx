@@ -15,7 +15,10 @@ const render = (Component) => {
 }
 render(App)
 // The if statement below render() triggers the swapping process. Take a look at the HMR documentation for optional further explanation about how this works behind the scenes.
+
 /*eslint-disable */
+
+// These special tags disable ESLint right before the first appearance of module, then immediately re-enable it after the block of code;
 if (module.hot) {
   module.hot.accept('./components/App', () => {
     render(App)
