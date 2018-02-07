@@ -4,6 +4,7 @@
 // This allows us to say things like resolve('file_name') instead of ./../much/longer/filepath/to/the/file_name.js
 const { resolve } = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 // Within the module we declare an entry specifying the file where the bundling process starts. Similar to the main.ts file in Angular, we specify index.jsx as our entry point.
@@ -81,5 +82,15 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
+// template tells the plugin which file to use as a template when creating an index.html in the build directory.
+// appMountId provides the name of our HTML's root DOM node. As discussed in Creating and Rendering Basic Elements, a root DOM node is the area of a page React manages.
+// title sets our new indexs <title> tags.
+// filename is the location we're placing our programmatically-generated index.html.
+    new HtmlWebpackPlugin({
+      template:'template.ejs',
+      appMountId: 'react-app-root',
+      title: 'React Help Queue',
+      filename: resolve(__dirname, "build", "index.html"),
+    }),
   ]
 };
