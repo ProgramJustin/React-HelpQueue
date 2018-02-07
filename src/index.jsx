@@ -15,11 +15,13 @@ const render = (Component) => {
 }
 render(App)
 // The if statement below render() triggers the swapping process. Take a look at the HMR documentation for optional further explanation about how this works behind the scenes.
+/*eslint-disable */
 if (module.hot) {
   module.hot.accept('./components/App', () => {
     render(App)
   })
 }
+/*eslint-disable */
 
 // We always import React from the "react" npm package at the top of the file.
 //
