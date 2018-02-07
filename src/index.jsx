@@ -1,8 +1,8 @@
 // This entry point is a special type of file. It is not a component
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './components/App'
-import { AppContainer } from 'react-hot-loader'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App';
+import { AppContainer } from 'react-hot-loader';
 // <AppContainer> is a wrapper component from React-Hot-Loader that handles reloading the application and sending errors if anything goes awry.
 
 const render = (Component) => {
@@ -11,14 +11,14 @@ const render = (Component) => {
       <Component/>
     </AppContainer>,
     document.getElementById('react-app-root')
-  )
-}
-render(App)
+  );
+};
+render(App);
 // The if statement below render() triggers the swapping process. Take a look at the HMR documentation for optional further explanation about how this works behind the scenes.
 
+// These special tags disable ESLint right before the first appearance of module, then immediately re-enable it after the block of code;
 /*eslint-disable */
 
-// These special tags disable ESLint right before the first appearance of module, then immediately re-enable it after the block of code;
 if (module.hot) {
   module.hot.accept('./components/App', () => {
     render(App)
