@@ -21,10 +21,16 @@ var masterTicketList = [
 
 function TicketList(){
   return (
-    <Ticket
-      location="3A"
-      names="Justin, Mew, and Nigel"
-      issue="Firebase will not save record!" />
+    <div>
+      <hr/>
+      {masterTicketList.map((ticket, index) =>
+        <Ticket names={ticket.names}
+          location={ticket.location}
+          issue={ticket.issue}
+          key={index}/>
+      )}
+    </div>
+
   );
 }
 
