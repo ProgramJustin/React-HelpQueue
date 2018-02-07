@@ -5,10 +5,10 @@ import App from "./components/App";
 import { AppContainer } from 'react-hot-loader';
 // <AppContainer> is a wrapper component from React-Hot-Loader that handles reloading the application and sending errors if anything goes awry.
 
-const render = (component) => {
+const render = (Component) => {
   ReactDOM.render(
     <AppContainer>
-    <component/>
+    <Component/>
     </AppContainer>,
     document.getElementById('react-app-root')
   );
