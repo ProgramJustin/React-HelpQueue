@@ -7,7 +7,15 @@ import PropTypes from 'prop-types';
 function Ticket(props){
 // Also, don't forget JSX JavaScript expressions must be wrapped in curly braces. This indicates content should be evaluated instead of literally rendered. We call the props object and access its location, name and issue values, which requires evaluation. (Without curly braces, our DOM would literally read "props.location" instead of "3A").
   return (
-    <div>
+    <div className="color-toggle">
+    <style jsx global>{`
+        .color-toggle {
+          background-color: white;
+        }
+        .color-toggle:hover {
+          background-color: lightGray;
+        }
+      `}</style>
       <h3>{props.location} - {props.names}</h3>
       <p><em>{props.issue}</em></p>
       <hr/>
