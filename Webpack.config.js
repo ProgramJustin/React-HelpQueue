@@ -10,6 +10,12 @@ module.exports = {
 
 // An entry point is the file responsible for instructing the module bundler how to build the application. The browser loads this file first.
   entry: [
+//     react-hot-loader/patch activates hot module replacement.
+// webpack-dev-server/client?http: localhost:8080' connects to the necessary endpoint (our project will be served at localhost:8080).
+// webpack/hot/only-dev-server instructs Webpack to bundle code, then provide the bundle to the development server
+    'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/only-dev-server',
     resolve(__dirname, "src") + "/index.jsx"
   ],
 
@@ -19,11 +25,28 @@ module.exports = {
    filename: 'app.bundle.js',
    // path: points to a directory called build. This is where our transpiled, bundled source code will reside. __dirname refers to the current directory webpack.config.js is located in. We call resolve() and pass the name of the directory we're attempting to locate (build) and __dirname. The path library then resolves the exact file path for us.
    path: resolve(__dirname, 'build'),
+   // This specifies where hot-reloaded modules should be loaded. / is the default publicPath configuration for single page applications. That means HMR would still work without this line. However, we include it to denote we're actively choosing the default path, /
+   publicPath: '/'
  },
 
  resolve: {
    // The resolve option tells Webpack to locate files with specific extensions. By specifying the extensions here, we can later import files without explicitly listing an extension in their import statement. (ie,: require(myComponent) instead of: require(myComponent.jsx)). This is certainly not mandatory, but a helpful feature
    extensions: ['.js', '.jsx']
+ },
+// devtool tells Webpack how to communicate errors
+ devtool: '#source-map',
+ // source-map is not the only devtool option. Check out the Wepack documentation on devtool to see what else is available.
+
+
+
+
+ devServer: {
+//    hot: true enables HMR on the local server.
+// contentBase points to the source code it will serve in the browser.
+// publicPath specifies where hot-reloaded modules should be loaded. This should always match the publicPath option in output.
+   hot: true,
+   contentBase: resolve(__dirname, 'build'),
+   publicPath: '/'
  },
 
 // we need to configure Webpack and Babel to work together. We need Webpack to invoke Babel during the bundling process to transpile our JSX into ES5. We do this by adding more configurations to webpack.config.js:
@@ -38,16 +61,25 @@ module.exports = {
    rules: [
      {
        test: /\.jsx?$/,
-       // a loader is an additional library that works with webpack to pre-process code before webpack bundles it.
        loader: "babel-loader",
        exclude: /node_modules/,
        options: {
          presets: [
-           "es2015",
-           "react"
+           // We've added modules: false to presets. Babel organizes code into a format called CommonJS by default. But CommonJS doesn't support hot module replacement. This configuration turns off CommonJS formatting.
+           ["es2015", {"modules": false}],
+           "react",
+         ],
+         plugins: [
+           "react-hot-loader/babel"
          ]
        }
-     },
-   ],
- }
+     }
+   ]
+ },
+//  The first line we've added to plugins enables HMR globally.
+// The second prints HMR status updates to the console. These are both additional plugins from the react-hot-loader/babel plugin we just added to our rules.
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
+  ]
 };
