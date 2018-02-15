@@ -1,9 +1,12 @@
 import React from 'react';
 
 function NewTicketForm(){
+  function handleNewTicketFormSubmission(event) {
+    event.preventDefault();
+  }
   return(
     <div>
-      <form>
+      <form onSubmit={handleNewTicketFormSubmission}>
         <input
           type='text'
           id='names'
