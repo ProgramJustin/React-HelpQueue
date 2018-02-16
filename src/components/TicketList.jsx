@@ -9,7 +9,7 @@ function TicketList(props){
   return (
     <div style={ticketList}>
       <hr/>
-      {masterTicketList.map((ticket, index) =>
+      {props.ticketList.map((ticket, index) =>
         <Ticket names={ticket.names}
           location={ticket.location}
           issue={ticket.issue}
