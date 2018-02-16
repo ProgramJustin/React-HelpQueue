@@ -7,9 +7,13 @@ function NewTicketForm(){
 
   function handleNewTicketFormSubmission(event) {
     event.preventDefault();
-    console.log(_names);
-    console.log(_location);
-    console.log(_issue);
+
+    console.log(_names.value);
+    console.log(_location.value);
+    console.log(_issue.value);
+    _names.value = '';
+    _location.value = '';
+    _issue.value = '';
 
   }
   return(
@@ -28,7 +32,7 @@ function NewTicketForm(){
         <textarea
           id='issue'
           placeholder='Describe your issue.'
-          ref={(input) => {_issue = textarea;}}/>
+          ref={(textarea) => {_issue = textarea;}}/>
         <button type='submit'>Help!</button>
       </form>
     </div>
