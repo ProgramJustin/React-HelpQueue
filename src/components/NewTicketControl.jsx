@@ -8,7 +8,7 @@ class NewTicketControl extends React.Component {
     // super is called to access a parent class's constructor
     super(props);
     this.state = {
-      formVisibleOnPage: false
+      formVisibleOnPage: false,
     };
     this.handleTroubleshootingConfirmation = this.handleTroubleshootingConfirmation.bind(this);
   }
