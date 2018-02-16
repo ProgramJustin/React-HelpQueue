@@ -1,7 +1,8 @@
 import React from 'react';
 import Ticket from './Ticket';
+import PropTypes from 'prop-types';
 
-function TicketList(){
+function TicketList(props){
   var ticketList = {
     fontFamily: 'sans-serif',
   };
@@ -19,5 +20,9 @@ function TicketList(){
 
   );
 }
+
+TicketList.propTypes = {
+  ticketList: PropTypes.array
+};
 
 export default TicketList;
