@@ -38,9 +38,10 @@ class App extends React.Component {
     );
     this.setState({masterTicketList: newMasterTicketList});
   }
-  
+
   handleAddingNewTicketToList(newTicket){
     var newMasterTicketList = this.state.masterTicketList.slice();
+    newTicket.formattedWaitTime = (newTicket.timeOpen).fromNow(true);
     newMasterTicketList.push(newTicket);
     this.setState({masterTicketList: newMasterTicketList});
   }
