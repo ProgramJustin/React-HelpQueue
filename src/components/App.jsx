@@ -25,6 +25,10 @@ class App extends React.Component {
     );
   }
 
+  componentWillUnmount(){
+    clearInterval(this.waitTimeUpdateTimer);
+  }
+  
   handleAddingNewTicketToList(newTicket){
     var newMasterTicketList = this.state.masterTicketList.slice();
     newMasterTicketList.push(newTicket);
@@ -40,9 +44,6 @@ class App extends React.Component {
     this.setState({masterTicketList: newMasterTicketList});
   }
 
-  componentWillUnmount(){
-    clearInterval(this.waitTimeUpdateTimer);
-  }
   render(){
     return (
       <div>
