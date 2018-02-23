@@ -15,11 +15,11 @@ function NewTicketForm(props){
     _names.value = '';
     _location.value = '';
     _issue.value = '';
-
   }
+
   return(
     <div>
-      <form onSubmit={handleNewTicketFormSubmission}>
+      <form className="formStyle" onSubmit={handleNewTicketFormSubmission}>
         <input
           type='text'
           id='names'
