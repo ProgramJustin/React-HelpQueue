@@ -3,14 +3,15 @@ import Ticket from './Ticket';
 import PropTypes from 'prop-types';
 
 function TicketList(props){
-  var ticketList = {
+  var ticketListStyle = {
     fontFamily: 'sans-serif',
   };
   return (
-    <div style={ticketList}>
+    <div style={ticketListStyle}>
       <hr/>
       {props.ticketList.map((ticket) =>
-        <Ticket names={ticket.names}
+        <Ticket
+          names={ticket.names}
           location={ticket.location}
           issue={ticket.issue}
           formattedWaitTime={ticket.formattedWaitTime}
