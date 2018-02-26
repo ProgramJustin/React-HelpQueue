@@ -17,7 +17,8 @@ class App extends React.Component {
     console.log(props);
     super(props);
     this.state = {
-      masterTicketList: []
+      masterTicketList: [],
+      selectedTicket: null
     };
     this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this);
   }
@@ -81,7 +82,7 @@ class App extends React.Component {
             path='/newticket'
             render={()=><NewTicketControl onNewTicketCreation={this.handleAddingNewTicketToList} />} />
           <Route
-            path='/admin' 
+            path='/admin'
             render={(props)=><Admin ticketList={this.state.masterTicketList} currentRouterPath={props.location.pathname} />} />
           <Route
             component={Error404} />
