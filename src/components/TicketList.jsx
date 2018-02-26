@@ -16,13 +16,14 @@ function TicketList(props){
           issue={ticket.issue}
           formattedWaitTime={ticket.formattedWaitTime}
           currentRouterPath={props.currentRouterPath}
-          key={ticket.id}/>
+          key={ticket.id}
+          onTicketSelection={props.onTicketSelection}/>
       )}
     </div>
 
   );
 }
-
+// Notice we don't declare onTicketSelection as isRequired, because instances of TicketList rendered in the index route will not be be passed this prop. Only those rendered in the admin route will have this prop.
 TicketList.propTypes = {
   ticketList: PropTypes.array,
   currentRouterPath: PropTypes.string,
