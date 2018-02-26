@@ -69,6 +69,10 @@ class App extends React.Component {
     newMasterTicketList.push(newTicket);
     this.setState({masterTicketList: newMasterTicketList});
   }
+  handleChangingSelectedTicket(ticket){
+    this.setState({selectedTicket: ticket});
+    alert('The selected ticket is now' + this.state.selectedTicket.names);
+  }
 
   render(){
     return (
