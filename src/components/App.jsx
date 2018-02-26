@@ -73,7 +73,6 @@ class App extends React.Component {
   // Following event handler naming conventions, we call the method handleChangingSelectedTicket()
   handleChangingSelectedTicket(ticket){
     this.setState({selectedTicket: ticket});
-    alert('The selected ticket is now' + this.state.selectedTicket.names);
   }
 
   render(){
