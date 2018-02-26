@@ -5,6 +5,7 @@ import TicketDetail from './TicketDetail';
 
 function Admin(props) {
   console.log(props.currentRouterPath);
+  
   return (
     <div>
       <h2>Admin</h2>

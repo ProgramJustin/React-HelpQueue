@@ -90,7 +90,8 @@ class App extends React.Component {
           <Route
             path='/admin'
             render={(props)=><Admin ticketList={this.state.masterTicketList} currentRouterPath={props.location.pathname}
-            onTicketSelection={this.handleChangingSelectedTicket}/>} />
+            onTicketSelection={this.handleChangingSelectedTicket}
+            selectedTicket={this.state.selectedTicket}/>} />
           <Route
             component={Error404} />
         </Switch>
