@@ -25,7 +25,7 @@ function Ticket(props){
   if (props.currentRouterPath === '/Admin'){
     return (
       <div
-        onClick={() => {alert('hey, you just clicked the ticket belonging to' + ' ' + props.names);}}>
+        onClick={() => {props.onTicketSelection({names: props.names, location: props.location, issue: props.issue, formattedWaitTime: props.formattedWaitTime});}}>
         {ticketInformation}
       </div>
     );
