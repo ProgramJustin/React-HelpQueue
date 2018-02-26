@@ -21,6 +21,7 @@ class App extends React.Component {
       selectedTicket: null
     };
     this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this);
+    this.handleChangingSelectedTicket = this.handleChangingSelectedTicket.bind(this);
   }
 
   componentDidMount() {
@@ -69,6 +70,7 @@ class App extends React.Component {
     newMasterTicketList.push(newTicket);
     this.setState({masterTicketList: newMasterTicketList});
   }
+  // Following event handler naming conventions, we call the method handleChangingSelectedTicket()
   handleChangingSelectedTicket(ticket){
     this.setState({selectedTicket: ticket});
     alert('The selected ticket is now' + this.state.selectedTicket.names);
