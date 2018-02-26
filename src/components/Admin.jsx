@@ -4,12 +4,16 @@ import TicketList from './TicketList';
 import TicketDetail from './TicketDetail';
 
 function Admin(props) {
+  let optionalSelectedTicketContent = null;
+  if (props.selectedTicket != null){
+    optionalSelectedTicketContent = <TicketDetail />;
+  }
   console.log(props.currentRouterPath);
 
   return (
     <div>
       <h2>Admin</h2>
-      <TicketDetail />
+      {optionalSelectedTicketContent}
       <TicketList
         ticketList={props.ticketList}
         currentRouterPath={props.currentRouterPath}
