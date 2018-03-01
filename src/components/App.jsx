@@ -72,8 +72,8 @@ class App extends React.Component {
     this.setState({masterTicketList: newMasterTicketList});
   }
   // Following event handler naming conventions, we call the method handleChangingSelectedTicket()
-  handleChangingSelectedTicket(ticket){
-    this.setState({selectedTicket: ticket});
+  handleChangingSelectedTicket(ticketId){
+    this.setState({selectedTicket: ticketId});
   }
 
   render(){
