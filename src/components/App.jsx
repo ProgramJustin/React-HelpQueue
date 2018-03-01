@@ -30,7 +30,7 @@ class App extends React.Component {
     60000
     );
   }
-  
+
   componentWillUnmount(){
     clearInterval(this.waitTimeUpdateTimer);
   }
