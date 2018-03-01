@@ -8,7 +8,7 @@ function Admin(props) {
   if (props.selectedTicket != null){
     optionalSelectedTicketContent = <TicketDetail selectedTicket={props.selectedTicket}/>;
   }
-  console.log(props.currentRouterPath);
+  // console.log(props.currentRouterPath);
 
   return (
     <div>

@@ -23,14 +23,14 @@ class App extends React.Component {
     this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this);
     this.handleChangingSelectedTicket = this.handleChangingSelectedTicket.bind(this);
   }
-
+  // life cycle hook that will update elapsed wait time for ticket
   componentDidMount() {
     this.waitTimeUpdateTimer = setInterval(() =>
       this.updateTicketElapsedWaitTime(),
     60000
     );
   }
-
+  
   componentWillUnmount(){
     clearInterval(this.waitTimeUpdateTimer);
   }
@@ -55,15 +55,15 @@ class App extends React.Component {
   componentDidUpdate() {
     console.log('componentDidUpdate');
   }
-
+  // update ticket's elapsed wait time
   updateTicketElapsedWaitTime() {
-    let newMasterTicketList = this.state.masterTicketList.slice();
-    newMasterTicketList.forEach((ticket) =>
-      ticket.formattedWaitTime = (ticket.timeOpen).fromNow(true)
-    );
+    var newMasterTicketList = Object.assign({}, this.state.masterTicketList);
+    Object.keys(newMasterTicketList).forEach(ticketId => {
+      newMasterTicketList[ticketId].formattedWaitTime = (newMasterTicketList[ticketId].timeOpen).fromNow(true);
+    });
     this.setState({masterTicketList: newMasterTicketList});
   }
-
+  // add new tickets to state
   handleAddingNewTicketToList(newTicket){
     var newMasterTicketList = Object.assign({}, this.state.masterTicketList, {
       [newTicket.id]: newTicket
