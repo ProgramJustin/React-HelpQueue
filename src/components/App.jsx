@@ -10,6 +10,7 @@ import { Switch, Route } from 'react-router-dom';
 /*eslint-disable */
 import Moment from 'moment';
 /*eslint-disable */
+import { v4 } from 'uuid';
 
 
 class App extends React.Component {
@@ -65,6 +66,7 @@ class App extends React.Component {
   }
   // add new tickets to state
   handleAddingNewTicketToList(newTicket){
+    var newTicketId = v4();
     var newMasterTicketList = Object.assign({}, this.state.masterTicketList, {
       [newTicket.id]: newTicket
     });
