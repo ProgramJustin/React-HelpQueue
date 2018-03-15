@@ -19,9 +19,9 @@ describe('ticketListReducer', () => {
     const { names, location, issue, timeOpen, id } = sampleTicketData;
     action = {
       type: 'ADD_TICKET',
-      name: names,
+      names: names,
       location: location,
-      issue, issue,
+      issue: issue,
       timeOpen: timeOpen,
       id: id
     };
