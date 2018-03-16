@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'moment';
+import connect from 'react-redux';
 
 function NewTicketForm(props){
   /*eslint-disable */
