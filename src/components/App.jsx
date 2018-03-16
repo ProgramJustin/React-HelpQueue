@@ -15,7 +15,7 @@ import { v4 } from 'uuid';
 
 class App extends React.Component {
   constructor(props) {
-    console.log(props);
+    // console.log(props);
     super(props);
     this.state = {
       masterTicketList: {},
