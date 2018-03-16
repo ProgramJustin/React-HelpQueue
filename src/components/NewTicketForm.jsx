@@ -46,4 +46,7 @@ NewTicketForm.propTypes = {
   onNewTicketCreation: PropTypes.func
 };
 
+// redefines the entire NewTicketForm component as the return value of connect()
+NewTicketForm = connect()(NewTicketForm);
+
 export default NewTicketForm;
