@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'moment';
-import connect from 'react-redux';
+import { connect } from 'react-redux';
 
 function NewTicketForm(props){
   /*eslint-disable */
@@ -49,4 +49,5 @@ NewTicketForm.propTypes = {
 // redefines the entire NewTicketForm component as the return value of connect()
 NewTicketForm = connect()(NewTicketForm);
 
+// Because export default NewTicketForm; comes after connect(), the component exported from this file is the redefined version of NewTicketForm!
 export default NewTicketForm;
