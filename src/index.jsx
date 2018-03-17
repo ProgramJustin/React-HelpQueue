@@ -10,7 +10,7 @@ import ticketListReducer from './reducers/ticket-list-reducer';
 import { Provider } from 'react-redux';
 
 const store = createStore(ticketListReducer);
-
+/*eslint-disable */
 let unsubcribe = store.subscribe(() =>
   console.log(store.getState())
 );

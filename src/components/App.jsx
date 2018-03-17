@@ -2,13 +2,12 @@
 import React from 'react';
 import Header from './Header';
 import TicketList from './TicketList';
-// import NewTicketForm from './NewTicketForm';
 import NewTicketControl from './NewTicketControl';
-import Admin from './Admin';
 import Error404 from './Error404';
 import { Switch, Route } from 'react-router-dom';
 /*eslint-disable */
 import Moment from 'moment';
+import Admin from './Admin';
 /*eslint-disable */
 import { v4 } from 'uuid';
 
@@ -21,7 +20,6 @@ class App extends React.Component {
       masterTicketList: {},
       selectedTicket: null
     };
-    this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this);
     this.handleChangingSelectedTicket = this.handleChangingSelectedTicket.bind(this);
   }
   // life cycle hook that will update elapsed wait time for ticket
@@ -64,15 +62,7 @@ class App extends React.Component {
     });
     this.setState({masterTicketList: newMasterTicketList});
   }
-  // add new tickets to state
-  handleAddingNewTicketToList(newTicket){
-    var newTicketId = v4();
-    var newMasterTicketList = Object.assign({}, this.state.masterTicketList, {
-      [newTicket.id]: newTicket
-    });
-    newMasterTicketList[newTicket.id].formattedWaitTime = newMasterTicketList[newTicket.id].timeOpen.fromNow(true);
-    this.setState({masterTicketList: newMasterTicketList});
-  }
+
   // Following event handler naming conventions, we call the method handleChangingSelectedTicket()
   handleChangingSelectedTicket(ticketId){
     this.setState({selectedTicket: ticketId});
@@ -89,7 +79,7 @@ class App extends React.Component {
             render={()=><TicketList ticketList={this.state.masterTicketList} />} />
           <Route
             path='/newticket'
-            render={()=><NewTicketControl onNewTicketCreation={this.handleAddingNewTicketToList} />} />
+            render={()=><NewTicketControl />} />
           <Route
             path='/admin'
             render={(props)=><Admin ticketList={this.state.masterTicketList} currentRouterPath={props.location.pathname}
