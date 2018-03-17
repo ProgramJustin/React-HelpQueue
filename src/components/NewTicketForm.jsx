@@ -10,6 +10,7 @@ function NewTicketForm(props){
   let _issue = null;
 
   function handleNewTicketFormSubmission(event) {
+    console.log(props);
     const { dispatch } = props;
     event.preventDefault();
     const action = {
@@ -51,7 +52,8 @@ function NewTicketForm(props){
 }
 
 NewTicketForm.propTypes = {
-  onNewTicketCreation: PropTypes.func
+  onNewTicketCreation: PropTypes.func,
+  dispatch: PropTypes.func
 };
 
 export default connect()(NewTicketForm);
