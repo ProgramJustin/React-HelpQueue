@@ -4,13 +4,12 @@ import Moment from 'moment';
 import { connect } from 'react-redux';
 
 function NewTicketForm(props){
-  /*eslint-disable */
-  console.log(props);
   let _names = null;
   let _location = null;
   let _issue = null;
 
   function handleNewTicketFormSubmission(event) {
+    const { dispatch } = props;
     event.preventDefault();
 
     props.onNewTicketCreation({names: _names.value, location: _location.value, issue: _issue.value, timeOpen: new Moment()});
