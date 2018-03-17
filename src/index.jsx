@@ -11,6 +11,9 @@ import { Provider } from 'react-redux';
 
 const store = createStore(ticketListReducer);
 
+let unsubcribe = store.subscribe(() =>
+  console.log(store.getState())
+);
 
 const render = (Component) => {
   ReactDOM.render(
