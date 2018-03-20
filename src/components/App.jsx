@@ -8,6 +8,7 @@ import { Switch, Route } from 'react-router-dom';
 /*eslint-disable */
 import Moment from 'moment';
 import Admin from './Admin';
+import { connect } from 'react-redux';
 /*eslint-disable */
 import { v4 } from 'uuid';
 
