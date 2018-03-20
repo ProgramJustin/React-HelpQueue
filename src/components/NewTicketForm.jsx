@@ -21,6 +21,9 @@ function NewTicketForm(props){
       timeOpen: new Moment()
     };
     dispatch(action);
+    _names.value = '';
+    _location.value = '';
+    _issue.value = '';
 
     return(
       <div>
