@@ -2,6 +2,7 @@ import React from 'react';
 import Moment from 'moment';
 import { connect } from 'react-redux';
 import { v4 } from 'uuid';
+// import PropTypes from 'prop-types';
 
 function NewTicketForm(props){
   let _names = null;
@@ -48,6 +49,7 @@ function NewTicketForm(props){
     );
   }
 }
+
 
 
 

@@ -11,6 +11,7 @@ import Admin from './Admin';
 import { connect } from 'react-redux';
 /*eslint-disable */
 import { v4 } from 'uuid';
+import PropTypes from 'prop-types';
 
 
 
@@ -100,5 +101,10 @@ const mapStateToProps = state => {
     masterTicketList: state
   }
 }
+
+App.propTypes = {
+  masterTicketList: PropTypes.object
+}
+
 
 export default connect(mapStateToProps)(App);
