@@ -79,13 +79,13 @@ class App extends React.Component {
         <Switch>
           <Route
             exact path='/'
-            render={()=><TicketList ticketList={this.state.masterTicketList} />} />
+            render={()=><TicketList ticketList={this.props.masterTicketList} />} />
           <Route
             path='/newticket'
             render={()=><NewTicketControl />} />
           <Route
             path='/admin'
-            render={(props)=><Admin ticketList={this.state.masterTicketList} currentRouterPath={props.location.pathname}
+            render={(props)=><Admin ticketList={this.props.masterTicketList} currentRouterPath={props.location.pathname}
             onTicketSelection={this.handleChangingSelectedTicket}
             selectedTicket={this.state.selectedTicket}/>} />
           <Route
