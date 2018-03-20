@@ -12,6 +12,7 @@ import Admin from './Admin';
 import { v4 } from 'uuid';
 
 
+
 class App extends React.Component {
   constructor(props) {
     // console.log(props);
@@ -93,4 +94,4 @@ class App extends React.Component {
   }
 }
 
-export default connect()(App);
+export default App;
