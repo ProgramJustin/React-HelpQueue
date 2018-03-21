@@ -4,21 +4,20 @@ import Header from './Header';
 import TicketList from './TicketList';
 import NewTicketControl from './NewTicketControl';
 import Error404 from './Error404';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 /*eslint-disable */
 import Moment from 'moment';
 import Admin from './Admin';
 import { connect } from 'react-redux';
 /*eslint-disable */
-import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
 
 
 
 class App extends React.Component {
   constructor(props) {
-    // console.log(props);
     super(props);
+    console.log(props);
     this.state = {
       masterTicketList: {},
       selectedTicket: null
@@ -96,15 +95,14 @@ class App extends React.Component {
   }
 }
 
+App.propTypes = {
+  masterTicketList: PropTypes.object
+}
+
 const mapStateToProps = state => {
   return {
     masterTicketList: state
   }
 }
 
-App.propTypes = {
-  masterTicketList: PropTypes.object
-}
-
-
-export default connect(mapStateToProps)(App);
+export default withRouter(connect(mapStateToProps)(App));
