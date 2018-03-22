@@ -10,8 +10,8 @@ import { Provider } from 'react-redux';
 import rootReducer from './reducers/index';
 
 const store = createStore(rootReducer);
+let unsubscribe = store.subscribe(() =>
 /*eslint-disable */
-let unsubcribe = store.subscribe(() =>
   console.log(store.getState())
 );
 

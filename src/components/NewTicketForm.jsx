@@ -47,7 +47,6 @@ function NewTicketForm(props){
       </form>
     </div>
   );
-
 }
 
 export default connect()(NewTicketForm);

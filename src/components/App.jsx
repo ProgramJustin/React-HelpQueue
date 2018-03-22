@@ -100,7 +100,7 @@ App.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    masterTicketList: state
+    masterTicketList: state.masterTicketList
   }
 }
 
