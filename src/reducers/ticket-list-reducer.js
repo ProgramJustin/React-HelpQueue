@@ -1,10 +1,11 @@
 /*eslint-disable */
 export default (state = {}, action) => {
   let newState;
+  const { names, location, issue, timeOpen, id } = action;
+
   switch (action.type) {
   case 'ADD_TICKET':
-    const { names, location, issue, timeOpen, id } = action;
-      newState = Object.assign({}, state, {
+    newState = Object.assign({}, state, {
       [id]: {
         names: names,
         location: location,
