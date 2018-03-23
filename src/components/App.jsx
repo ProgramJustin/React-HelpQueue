@@ -58,11 +58,7 @@ class App extends React.Component {
   }
   // update ticket's elapsed wait time
   updateTicketElapsedWaitTime() {
-    // var newMasterTicketList = Object.assign({}, this.state.masterTicketList);
-    // Object.keys(newMasterTicketList).forEach(ticketId => {
-    //   newMasterTicketList[ticketId].formattedWaitTime = (newMasterTicketList[ticketId].timeOpen).fromNow(true);
-    // });
-    // this.setState({masterTicketList: newMasterTicketList});
+    const { dispatch } = this.props;
   }
 
   // Following event handler naming conventions, we call the method handleChangingSelectedTicket()

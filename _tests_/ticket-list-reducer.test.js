@@ -35,6 +35,7 @@ describe('ticketListReducer', () => {
       }
     });
   });
+  
   test('Should add freshly-calculated Moment-formatted wait time to ticket entry', () => {
     const { names, location, issue, timeOpen, id } = sampleTicketData;
     action = {
@@ -51,7 +52,7 @@ describe('ticketListReducer', () => {
         id: id,
         formattedWaitTime: '4 minutes'
       }
-    })
+    });
   });
 
 });
