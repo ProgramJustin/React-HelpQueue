@@ -3,6 +3,15 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 function Ticket(props){
+
+  function handleSavingSelectedTicket(ticketId){
+    const { dispatch } = props;
+    const action = {
+      type: 'SELECTED_TICKET',
+      ticketId: ticketId
+    };
+    dispatch(action);
+  }
   const ticketInformation =
     <div className="color-toggle">
       <style jsx global>{`
