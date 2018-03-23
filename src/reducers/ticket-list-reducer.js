@@ -18,7 +18,9 @@ export default (state = {}, action) => {
 
   case 'UPDATE_TIME':
     const newTicket = Object.assign({}, state[id], {formattedWaitTime});
-    
+    newState = Object.assign({}, state, {
+      [id]: newTicket
+    });
     return newState;
 
   default:
