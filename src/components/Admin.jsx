@@ -28,5 +28,11 @@ Admin.propTypes = {
   onTicketSelection: PropTypes.func.isRequired,
   selectedTicket: PropTypes.string
 };
+const mapStateToProps = state => {
+  return {
+    selectedTicket: state.selectedTicket,
+    ticketList: state.masterTicketList
+  };
+};
 
 export default connect()(Admin);
