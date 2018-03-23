@@ -1,7 +1,9 @@
+// The closest common ancestor of all components that use selectedTicket state is Admin. It conditionally renders a TicketDetail component when a ticket is selected. Admin is also a container. We know this because it organizes other presentational components, and dictates how the app works more than how it appears. (The only UI it returns outside of presentational components is the word "Admin")
 import React from 'react';
 import PropTypes from 'prop-types';
 import TicketList from './TicketList';
 import TicketDetail from './TicketDetail';
+import { connect } from 'react-redux';
 
 function Admin(props) {
 
@@ -27,4 +29,4 @@ Admin.propTypes = {
   selectedTicket: PropTypes.string
 };
 
-export default Admin;
+export default connect()(Admin);
