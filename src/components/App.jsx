@@ -59,7 +59,10 @@ class App extends React.Component {
   // update ticket's elapsed wait time
   updateTicketElapsedWaitTime() {
     const { dispatch } = this.props;
+    // map through the masterTicketList prop App receives from the Redux store
     Object.keys(this.props.masterTicketList).map(ticketId => {
+      const ticket = this.props.masterTicketList[ticketId];
+      const newFormattedWaitTime = ticket.timeOpen.fromNow(true);
 
     });
   }
