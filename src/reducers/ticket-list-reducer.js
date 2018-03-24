@@ -1,7 +1,8 @@
 /*eslint-disable */
 export default (state = {}, action) => {
   let newState;
-  const { names, location, issue, timeOpen, id } = action;
+
+  const { names, location, issue, timeOpen, id, formattedWaitTime } = action;
 
   switch (action.type) {
   case 'ADD_TICKET':
