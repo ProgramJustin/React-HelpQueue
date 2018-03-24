@@ -15,15 +15,7 @@ import PropTypes from 'prop-types';
 
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    console.log(props);
-    this.state = {
-      masterTicketList: {},
-      selectedTicket: null
-    };
-    this.handleChangingSelectedTicket = this.handleChangingSelectedTicket.bind(this);
-  }
+
   // life cycle hook that will update elapsed wait time for ticket
   componentDidMount() {
     this.waitTimeUpdateTimer = setInterval(() =>
@@ -72,13 +64,7 @@ class App extends React.Component {
     });
   }
 
-  // Following event handler naming conventions, we call the method handleChangingSelectedTicket()
-  handleChangingSelectedTicket(ticketId){
-    this.setState({selectedTicket: ticketId});
-  }
-
   render(){
-    console.log(this.state.masterTicketList);
     return (
       <div>
         <Header />
@@ -89,11 +75,7 @@ class App extends React.Component {
           <Route
             path='/newticket'
             render={()=><NewTicketControl />} />
-          <Route
-            path='/admin'
-            render={(props)=><Admin ticketList={this.props.masterTicketList} currentRouterPath={props.location.pathname}
-            onTicketSelection={this.handleChangingSelectedTicket}
-            selectedTicket={this.state.selectedTicket}/>} />
+          <Route path='/admin' render={(props)=><Admin currentRouterPath={props.location.pathname} />} />
           <Route component={Error404} />
         </Switch>
       </div>
