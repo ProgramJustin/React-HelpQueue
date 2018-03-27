@@ -1,6 +1,8 @@
+import c from './../constants';
+
 export default (state = {}, action) => {
   switch (action.type) {
-  case 'SELECTED_TICKET':
+  case c.SELECTED_TICKET:
     return action.ticketId;
   default:
     return state;
