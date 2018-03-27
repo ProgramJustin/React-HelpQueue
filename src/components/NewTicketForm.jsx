@@ -10,7 +10,6 @@ function NewTicketForm(props){
   let _issue = null;
 
   function handleNewTicketFormSubmission(event) {
-    // console.log(props);
     const { dispatch } = props;
     event.preventDefault();
     const action = {
