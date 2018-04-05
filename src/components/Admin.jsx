@@ -6,7 +6,6 @@ import TicketDetail from './TicketDetail';
 import { connect } from 'react-redux';
 
 function Admin(props) {
-
   let optionalSelectedTicketContent = null;
   if (props.selectedTicket.length > 0){
     optionalSelectedTicketContent = <TicketDetail selectedTicket={props.ticketList[props.selectedTicket]}/>;

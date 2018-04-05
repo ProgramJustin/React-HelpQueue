@@ -5,12 +5,14 @@ import App from './components/App';
 // import { AppContainer } from 'react-hot-loader';
 // <AppContainer> is a wrapper component from React-Hot-Loader that handles reloading the application and sending errors if anything goes away.
 import { HashRouter } from 'react-router-dom';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import persistDataLocally from './middleware/persist-data-locally';
 import { Provider } from 'react-redux';
 import rootReducer from './reducers/index';
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(persistDataLocally));
 /*eslint-disable */
+
 let unsubscribe = store.subscribe(() =>
   console.log(store.getState())
 );

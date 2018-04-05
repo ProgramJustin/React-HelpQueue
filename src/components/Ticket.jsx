@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import c from './../constants';
 
 function Ticket(props){
-
+  console.log(props.ticketId);
   function handleSavingSelectedTicket(ticketId){
     const { dispatch } = props;
     const action = {
