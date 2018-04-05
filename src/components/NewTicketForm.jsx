@@ -26,6 +26,7 @@ function NewTicketForm(props){
     _location.value = '';
     _issue.value = '';
   }
+  
   return(
     <div>
       <form className="formStyle" onSubmit={handleNewTicketFormSubmission}>
