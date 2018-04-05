@@ -21,7 +21,7 @@ try {
   retrievedState = {};
 }
 
-const store = createStore(rootReducer, applyMiddleware(persistDataLocally));
+const store = createStore(rootReducer, retrievedState applyMiddleware(persistDataLocally));
 /*eslint-disable */
 
 let unsubscribe = store.subscribe(() =>
