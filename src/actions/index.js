@@ -1,5 +1,5 @@
 import constants from './../constants';
-const { firebaseConfig } = constants;
+const { firebaseConfig, c } = constants;
 import Firebase from 'firebase';
 import Moment from 'Moment';
 
@@ -28,5 +28,12 @@ export function watchFireBaseTicketsRef() {
       });
       console.log(newTicket);
     });
+  };
+}
+
+function receiveTicket(ticketFromFirebase) {
+  return {
+    type: c.RECEIVE_TICKET,
+    ticket: ticketFromFirebase
   };
 }
