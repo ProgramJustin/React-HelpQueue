@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import constants from './../constants';
-import { c } from './../constants';
+const { c } = constants;
 
 function Ticket(props){
   console.log(props.ticketId);
