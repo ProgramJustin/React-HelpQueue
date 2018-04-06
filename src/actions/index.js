@@ -1,6 +1,6 @@
 import constants from './../constants';
 const { firebaseConfig } = constants;
-import firebase from 'firebase';
+import Firebase from 'firebase';
 
 firebase.initializeApp(firebaseConfig);
 // specify a tickets location (also known as a node) in our database
