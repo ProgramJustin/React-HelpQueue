@@ -5,8 +5,8 @@ import constants from './../constants';
 const { c } = constants;
 
 function Ticket(props){
-  console.log(props.ticketId);
   function handleSavingSelectedTicket(ticketId){
+    console.log(c);
     const { dispatch } = props;
     const action = {
       type: c.SELECTED_TICKET,
