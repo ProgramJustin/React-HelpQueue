@@ -28,6 +28,13 @@ export default (state = {}, action) => {
     });
     return newState;
 
+    // returned newState will be a list of all tickets that also includes the most recent ticket, saved under its Firebase-assigned ID
+
+  case c.RECEIVE_TICKET:
+    newState = Object.assign({}, state);
+    newState[action.ticket.id] = action.ticket;
+    return newState;
+
   default:
 
     return state;
