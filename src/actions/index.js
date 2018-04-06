@@ -15,3 +15,12 @@ export function addTicket(_names, _location, _issue) {
     timeOpen: new Date().getTime()
   });
 }
+
+// a listener that automatically runs when Firebase saves new data.
+export function watchFireBaseTicketsRef() {
+  return function(dispatch) {
+    tickets.on('child_added', data => {
+      console.log(data.val());
+    });
+  };
+}
