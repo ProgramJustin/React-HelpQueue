@@ -26,6 +26,7 @@ export function watchFireBaseTicketsRef() {
         id: data.getKey(),
         formattedWaitTime: new Moment(data.val().timeOpen).from(new Moment())
       });
+      dispatch(receiveTicket(newTicket));
       console.log(newTicket);
     });
   };
