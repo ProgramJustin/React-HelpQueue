@@ -13,6 +13,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import constants from './../constants';
 import c from './../constants';
+import * as actions from './../actions';
 
 
 class App extends React.Component {
@@ -31,6 +32,9 @@ class App extends React.Component {
 
   componentWillMount() {
     console.log('componentWillMount');
+    const { dispatch } = this.props;
+    const { watchFireBaseTicketsRef } = actions;
+    dispatch(watchFireBaseTicketsRef());
   }
 
   componentWillReceiveProps() {
