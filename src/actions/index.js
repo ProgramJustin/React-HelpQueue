@@ -1,7 +1,7 @@
 import constants from './../constants';
 const { firebaseConfig, c } = constants;
 import Firebase from 'firebase';
-import Moment from 'Moment';
+import Moment from 'moment';
 
 firebase.initializeApp(firebaseConfig);
 // specify a tickets location (also known as a node) in our database

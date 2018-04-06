@@ -1,6 +1,6 @@
 // its common practice to import constants as, or as constants is fine too
 import constants from './../constants';
-import c from './../constants';
+const { c } = constants;
 /*eslint-disable */
 export default (state = {}, action) => {
   let newState;
@@ -36,7 +36,6 @@ export default (state = {}, action) => {
     return newState;
 
   default:
-
     return state;
   }
 };

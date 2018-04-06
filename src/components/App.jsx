@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
 /*eslint-disable */
 import PropTypes from 'prop-types';
 import constants from './../constants';
-import c from './../constants';
+import { c } from './../constants';
 import * as actions from './../actions';
 
 
