@@ -1,4 +1,5 @@
 import selectedTicketReducer from './../src/reducers/selected-ticket-reducer';
+import constants from './../../src/constants';
 import c from './../src/constants';
 
 describe('selectedTicketReducer', () => {

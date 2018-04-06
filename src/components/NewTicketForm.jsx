@@ -2,6 +2,7 @@ import React from 'react';
 import Moment from 'moment';
 import { connect } from 'react-redux';
 import { v4 } from 'uuid';
+import constants from './../constants';
 import c from './../constants';
 
 function NewTicketForm(props){
@@ -26,7 +27,7 @@ function NewTicketForm(props){
     _location.value = '';
     _issue.value = '';
   }
-  
+
   return(
     <div>
       <form className="formStyle" onSubmit={handleNewTicketFormSubmission}>

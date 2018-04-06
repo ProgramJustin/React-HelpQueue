@@ -1,5 +1,6 @@
 import ticketListReducer from './../src/reducers/ticket-list-reducer';
 import Moment from 'moment';
+import constants from './../../src/constants';
 import c from './../src/constants';
 
 /*eslint-disable */

@@ -1,4 +1,5 @@
 // its common practice to import constants as, or as constants is fine too
+import constants from './../constants';
 import c from './../constants';
 /*eslint-disable */
 export default (state = {}, action) => {

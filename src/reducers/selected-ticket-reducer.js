@@ -1,3 +1,4 @@
+import constants from './../constants';
 import c from './../constants';
 
 export default (state = {}, action) => {
